@@ -18,14 +18,12 @@ public class ATM {
         this.balance = balance;
     }
 
-    public void selectTask()throws Exception {
-        System.out.println("What would you like to do? Select 1 (to check balance), 2 (to make a withdrawal) or 3 (to cancel)");
+    public void selectTask() throws Exception {
+        System.out.println("What would you like to do? Select 1 - check balance, 2 - make a withdrawal or 3 - cancel");
         String task = scanner.nextLine();
 
         if (task.equals("1")) {
             System.out.println(getBalance());
-            selectTask();
-            System.out.println("What would you like to do now? Select 1 (to check balance), 2 (to make a withdrawal) or 3 (to exit program)");
         } else if (task.equals("2")) {
             makeWithdrawal();
         } else if (task.equals("3")) {
@@ -36,6 +34,7 @@ public class ATM {
         }
 
     }
+
     public double makeWithdrawal() throws Exception {
         System.out.println("How much would you like to withdraw?");
         Double withdrawal = scanner.nextDouble();
@@ -49,10 +48,9 @@ public class ATM {
             throw new Exception("Insufficient funds. Please try again.");
         }
     }
-    public void exitProgram(){
+
+    public void exitProgram() {
         System.exit(0);
-
-
     }
 }
 
