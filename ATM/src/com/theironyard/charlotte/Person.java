@@ -35,7 +35,7 @@ public class Person {
         String choice = scanner.nextLine();
 
         if (choice.equalsIgnoreCase("1")) {
-            System.out.println("Your Balance is 100.");
+            System.out.println("Your Balance is. " + (balance - amount));
         }
         else if (choice.equalsIgnoreCase("2")) {
             System.out.println("How much would you like to withdraw?");
@@ -43,7 +43,7 @@ public class Person {
             Scanner sscanner = new Scanner(System.in);
             amount = sscanner.nextDouble();
 
-            if (balance > amount) {
+            if (balance >= amount) {
                 System.out.println("Please take your money.");
                 System.out.println("Your balance is $" + (balance - amount));
                 balance = (balance - amount);
