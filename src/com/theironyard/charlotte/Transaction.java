@@ -49,8 +49,8 @@ public class Transaction {
     public void withdrawFunds() throws Exception {
         System.out.println("How much would you like to withdraw?");
         //Get and round
-        setWithdrawalAmt(Math.round(scanner.nextDouble() * 100));
-        setWithdrawalAmt(getWithdrawalAmt() / 100);
+        setWithdrawalAmt(Math.round(scanner.nextDouble() *(double)100));
+        setWithdrawalAmt(getWithdrawalAmt() /(double)100);
         System.out.println("Processing request to withdraw: $" + getWithdrawalAmt());
 
         if (withdrawalAmt > balance) {
@@ -76,8 +76,11 @@ public class Transaction {
         //This code breaks down monies received
         System.out.println("You have received $" + withdrawalAmt + " broken down by:");
         for (int i = 0; i < coinage[0].length; i++) {
+            totalBills = totalBills*(double)100;
+            totalBills = Math.round(totalBills);
+            totalBills = totalBills/(double)100;
             coinage[1][i] = Math.floor((withdrawalAmt - totalBills) / coinage[0][i]);
-            totalBills = totalBills + (coinage[1][i] * coinage[0][i]);
+            totalBills = (totalBills + (coinage[1][i] * coinage[0][i]));
             if (coinage[1][i] != 0) {
                 System.out.println(coinage[1][i] + "  " +coinageName[i]);
             }
