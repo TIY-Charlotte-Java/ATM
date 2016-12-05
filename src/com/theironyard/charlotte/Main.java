@@ -43,6 +43,7 @@ public class Main {
                     break;
 
                 case 3:
+                    System.out.println("Thank you" + name + "Enjoy the rest of your day");
                     System.exit(0);
 
 
@@ -50,23 +51,3 @@ public class Main {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-	      //if (choice("1")) {
-	   //    newTransaction
-	    //   System.out.println("Your balance is $" + balance);
-       //} else if (choice("2")) {
-
-      // } else if (choice("3")) {
-	   //    System.out.println("Thank you" + name + "Enjoy the rest of your day")
-       //}
-
