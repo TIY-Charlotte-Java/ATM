@@ -39,7 +39,7 @@ public class ATM {
         System.out.println("How much would you like to withdraw?");
         Double withdrawal = scanner.nextDouble();
 
-        if (withdrawal > 0 && withdrawal <= 100){
+        if (withdrawal > 0 && withdrawal <= 100) {
             System.out.println("Please take your money.");
             setBalance(balance - withdrawal);
             System.out.println("Remaining balance is $" + getBalance());
@@ -52,5 +52,48 @@ public class ATM {
     public void exitProgram() {
         System.exit(0);
     }
-}
+
+    static void changeReturned ( double balance ) {
+        double twenties = balance/20;
+        int numberOfTwenties = (int)twenties;
+        System.out.println("The number of twenties dispensed is " + numberOfTwenties);
+        double remainder = balance % 20;
+
+        double tens = remainder/10;
+        int numberOfTens = (int)tens;
+        System.out.println("The number of tens dispensed is " + numberOfTens);
+        double remainder2 = remainder % 10;
+
+        double fives = remainder2/5;
+        int numberOfFives = (int)fives;
+        System.out.println("The number of fives dispensed is " + numberOfFives);
+        double remainder3 = remainder2 % 5;
+
+        double ones = remainder3/1;
+        int numberOfOnes = (int)ones;
+        System.out.println("The number of ones dispensed is " + numberOfOnes);
+        double remainder4 = remainder3%1;
+
+        double quarters = remainder4/.25;
+        int numberOfQuarters = (int)quarters;
+        System.out.println("The number of quarters dispensed is " + numberOfQuarters);
+        double remainder5 = remainder4%.25;
+
+        double dimes = remainder5/.10;
+        int numberOfDimes = (int)dimes;
+        System.out.println("The number of dimes dispensed is " + numberOfDimes);
+        double remainder6 = remainder5%.10;
+
+        double nickels = remainder6/.05;
+        int numberOfNickels = (int)nickels;
+        System.out.println("The number of nickels dispensed is " + numberOfNickels);
+        double remainder7 = remainder6%.05;
+
+        double pennies = remainder7/.01;
+        int numberOfPennies = (int)pennies;
+        System.out.println("The number of pennies dispensed is " + numberOfPennies);
+    }
+
+    }
+
 

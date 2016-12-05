@@ -8,13 +8,14 @@ public class Main {
         Person p = new Person();
         ATM t = new ATM();
         ATM task = new ATM();
+        ATM change = new ATM();
 
         Scanner scanner = new Scanner(System.in);
 
         p.provideName();
         t.getBalance();
         t.selectTask();
-
+        ATM.changeReturned(t.getBalance());
 
         do {
             System.out.println("What would you like to do now? Select 1 - check balance, 2 - make a withdrawal or 3 - cancel.");
